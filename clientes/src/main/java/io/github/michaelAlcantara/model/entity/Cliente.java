@@ -1,8 +1,6 @@
 package io.github.michaelAlcantara.model.entity;
 
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -20,7 +18,7 @@ public class Cliente {
     @Column(nullable = false, length = 11)
     private String cfp;
 
-    @Column
+    @Column(name = "data_cadastro")
     private LocalDate dataCriação;
 
 }
