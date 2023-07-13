@@ -24,9 +24,13 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -123,6 +127,6 @@
   },
   "defaultProject": "cliente-app",
   "cli": {
-    "analytics": "c87921af-b67f-453b-a6f6-ca968b16c414"
+    "analytics": "144190c4-5dac-43b7-9bb3-7bdf27a4858e"
   }
 }
