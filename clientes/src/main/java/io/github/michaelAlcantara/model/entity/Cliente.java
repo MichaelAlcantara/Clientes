@@ -33,11 +33,11 @@ public class Cliente {
 
     @Column(name = "data_cadastro", updatable = false)
     @JsonFormat(pattern = "dd/MM/yyyy")
-    private LocalDate dataCriação;
+    private LocalDate dataCadastro;
 
     @PrePersist
     public void prePersist(){
-        setDataCriação(LocalDate.now());
+        setDataCadastro(LocalDate.now());
     }
 
 }
