@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Cliente } from '../cliente'
 import { ClientesService } from 'src/app/clientes.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-clientes-form',
@@ -10,6 +11,8 @@ import { ClientesService } from 'src/app/clientes.service';
 export class ClientesFormComponent implements OnInit {
 
   cliente: Cliente;
+  success: boolean = false;
+  errors: String[];
 
   constructor(private service : ClientesService) { 
     this.cliente = new Cliente();
@@ -19,7 +22,7 @@ export class ClientesFormComponent implements OnInit {
   }
 
   onSubmit(){
-    this.service.salvar(this.cliente).subscribe(response => console.log(response));
+    this.service.salvar(this.cliente).subscribe(response => this.success = true, errorResponse => { this.errors = errorResponse.error.errors});
   }
 
 }
