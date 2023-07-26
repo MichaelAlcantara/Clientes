@@ -25,11 +25,15 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let cliente of clientes">
-                        <th>{{ cliente.id }}</th>
-                        <th>{{ cliente.nome }}</th>
-                        <th>{{ cliente.cpf }}</th>
-                        <th>{{ cliente.cadastro }}</th>
-                        <th></th>
+                        <td>{{ cliente.id }}</td>
+                        <td>{{ cliente.nome }}</td>
+                        <td>{{ cliente.cpf }}</td>
+                        <td>{{ cliente.cadastro }}</td>
+                        <td>
+                            <button class="btn btn-primary">
+                                <i class="fa fa-edit"></i>
+                            </button>
+                        </td>
                     </tr>
                 </tbody>
             </table>
