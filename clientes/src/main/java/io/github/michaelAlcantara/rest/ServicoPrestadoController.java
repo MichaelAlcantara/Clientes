@@ -13,6 +13,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -39,5 +40,10 @@ public class ServicoPrestadoController {
         servicoPrestado.setValor( bigDecimalConverter.converter(dto.getPreco()) );
 
         return repository.save(servicoPrestado);
+    }
+
+    @GetMapping
+    public List<ServicoPrestado> pesquisa(@RequestParam(value = "nome", required = false, defaultValue = "") String nome, @RequestParam(value = "mes", required = false) Integer mes){
+        return repository.findByNomeClienteAndMes("%"+nome+"%", mes);
     }
 }
