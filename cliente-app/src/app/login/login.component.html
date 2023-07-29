@@ -13,6 +13,9 @@
                             <div class="alert alert-danger" *ngIf="loginError">
                                 Login e/ou Senha incorreta(o)!
                             </div>
+                            <div class="alert alert-success" *ngIf="mensagemSucesso">
+                                {{ mensagemSucesso }}
+                            </div>
                             <form #loginForm="ngForm" (submit)="onSubmit();">
                                 <div class="form-group">
                                     <label class="samll mb-1">Login:</label>
@@ -28,7 +31,8 @@
 
                                 <div class="form-group align-items-center justify-content-between mt-4 mb-0">
                                     <button type="submit" class="btn btn-primary" *ngIf="!cadastrando">Enviar</button>
-                                    <button type="button" class="btn btn-success" *ngIf="cadastrando">Cadastrar</button>
+                                    <button type="button" class="btn btn-success" (click)="cadastrar()"
+                                     *ngIf="cadastrando">Cadastrar</button>
                                     <button type="button" class="btn btn-danger ml-1" (click)="cancelarCadastro()" 
                                     *ngIf="cadastrando">Cancelar</button>
                                 </div>
