@@ -23,7 +23,7 @@ export class ClientesListaComponent implements OnInit {
 
   novoCadastro(){
     //Rota para criar novos clientes
-    this.router.navigate(['/clientes-form'])
+    this.router.navigate(['/clientes/form'])
   }
 
   prepararDelecao(cliente: Cliente){
