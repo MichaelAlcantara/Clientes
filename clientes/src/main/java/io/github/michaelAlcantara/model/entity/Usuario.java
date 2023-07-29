@@ -15,9 +15,9 @@ public class Usuario {
     private Integer id;
 
     //Significa que é único
-    @Column(unique = true)
+    @Column(unique = true, name = "login")
     private String username;
 
-    @Column
+    @Column(name = "senha")
     private String password;
 }
