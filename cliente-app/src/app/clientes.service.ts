@@ -14,12 +14,8 @@ export class ClientesService {
   constructor( private http : HttpClient) { }
 
   salvar( cliente: Cliente) : Observable<Cliente> {
-    const tokenSting = localStorage.getItem('access_token')
-    const token = JSON.parse(tokenSting)
-    const headers = {
-      'Authorization' : 'Bearer' + token.access_token
-    }
-    return this.http.post<Cliente>(`${this.apiURL}`, cliente, { headers });
+    
+    return this.http.post<Cliente>(`${this.apiURL}`, cliente);
   }
 
   atualizar(cliente: Cliente) : Observable<any>{
@@ -27,12 +23,8 @@ export class ClientesService {
   }
 
   getClientes() : Observable<Cliente[]>{
-    const tokenSting = localStorage.getItem('access_token')
-    const token = JSON.parse(tokenSting)
-    const headers = {
-      'Authorization' : 'Bearer' + token.access_token
-    }
-    return this.http.get<Cliente[]>(this.apiURL, { headers });
+    
+    return this.http.get<Cliente[]>(this.apiURL);
   }
 
   getClienteById(id: number) : Observable<Cliente>{
